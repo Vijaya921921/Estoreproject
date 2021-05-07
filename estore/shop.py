@@ -1,4 +1,5 @@
-import os
+import os
+
 os.chdir(r"C:\Users\HI\OneDrive\Desktop\estoreproject\estore")
 import sys
 sys.path.append(r"C:\Users\HI\OneDrive\Desktop\estoreproject\estore")
@@ -17,12 +18,17 @@ while flow == 'y':
         info = v.Buy()
         summary[customer] = info
         customer += 1
+        print("Thank you for shopping")
+        flow = input('Do you want to continue[y/n]:').lower()
+        if flow == "n":
+            break
     else:
         v.cancel()
-    flow = input('Do you want to continue[y/n]: ').lower()
-    if flow == "n":
-        exit()  
-    print("Thank you for shopping")
+    
+        print("Thank you for shopping")
+        flow = input('Do you want to continue[y/n]:').lower()
+        if flow == "n":
+            break
 
 for key in summary.keys():
     today_sales += summary[key]['num items']
@@ -47,3 +53,4 @@ with open("data.json") as f:
             if regions[j] == Uregions[i]:
                 item_count += num_items[j]
         print("Sales in {} region is {}".format(Uregions[i], item_count))
+
