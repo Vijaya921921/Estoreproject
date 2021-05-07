@@ -50,7 +50,7 @@ class Buyings:
                info['price'] = price
                self.Buyings[name] = info
           print(self.Buyings)
-          final_tuple = (name,products[t],price,region,num_items)
+          final_tuple = (name,products[t-1],price,region,num_items)
           sql = "INSERT INTO customer_table (name, product,price,region,quantity) VALUES (%s,%s,%s,%s,%s)"
         
           mycursor.execute(sql,final_tuple)
