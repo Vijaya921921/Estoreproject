@@ -35,7 +35,6 @@ for key in summary.keys():
 with open("data.json", "w") as f:
     json.dump(summary, f)
 with open("data.json") as f:
-    # sales_dict = json.load(f)
     data = pd.read_json(f, orient='index')
     df = pd.DataFrame(data)
     print(df.head())
