@@ -43,13 +43,3 @@ with open("data.json") as f:
     print("Number of coolers sold out today {}".format(df['cooler'].sum(axis=0)))
     print("Number of fans sold out today {}".format(df['fan'].sum(axis=0)))
     print("Number of heaters sold out today {}".format(df['heater'].sum(axis=0)))
-    Uregions = df['region'].unique()
-    regions = df['region']
-    num_items = df['num items']
-    for i in range(len(Uregions)):
-        item_count = 0
-        for j in range(len(summary)):
-            if regions[j] == Uregions[i]:
-                item_count += num_items[j]
-        print("Sales in {} region is {}".format(Uregions[i], item_count))
-
